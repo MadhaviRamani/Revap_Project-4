@@ -1,6 +1,18 @@
+
 .color-card {
-  margin: 0px 10px;
-  padding: 5px;
+  padding: 24px;
+  border-radius: 12px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.color-card p {
+  margin: 0;
+  font-weight: 600;
 }
 
 .color-card-headline {
