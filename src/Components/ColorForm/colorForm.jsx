@@ -8,12 +8,9 @@ export default function ColorForm({
   onCancel,
 }) {
   function handleUpdate(event) {
-    console.log( onSubmitColor);
-    console.log("initialData:", initialData);
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-      console.log("Submitted data:", data);
     onSubmitColor(data);
     event.currentTarget.reset();
   }
@@ -45,7 +42,7 @@ export default function ColorForm({
       <br />
       <button type="submit">{buttonText}</button>
       {onCancel && (
-        <button type="button" onClick={ onCancel}>
+        <button type="button" onClick={onCancel}>
           Cancel
         </button>
       )}
