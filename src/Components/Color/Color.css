@@ -21,3 +21,12 @@
   background: black;
   color: white;
 }
+.delete-button{
+  width: 10%;
+  border-radius: 5px;
+  border: 0;
+}
+.delete-button:hover{
+  width: 15%;
+  height: 30px;
+}
