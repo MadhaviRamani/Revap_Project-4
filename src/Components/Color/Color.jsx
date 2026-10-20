@@ -2,7 +2,7 @@ import { useState } from "react";
 import ColorForm from "../ColorForm/colorForm";
 import "./Color.css";
 
-export default function Color({ color, onDeleteColor, onSubmitColor }) {
+export default function Color({ color, onDeleteColor, onEditColor }) {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -10,7 +10,7 @@ export default function Color({ color, onDeleteColor, onSubmitColor }) {
     onDeleteColor(color.id);
   }
    function handleUpdate(updatedColor) {
-    onSubmitColor({
+    onEditColor({
       ...color,
       ...updatedColor,
     });
