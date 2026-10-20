@@ -2,7 +2,6 @@ import { useState } from "react";
 import { nanoid } from "nanoid";
 import { initialColors } from "./lib/colors";
 import ColorForm from "./Components/ColorForm/colorForm";
-
 import Color from "./Components/Color/Color";
 import "./App.css";
 
@@ -21,6 +20,10 @@ function App() {
       currentColors.filter((color) => color.id !== toDelete),
     );
   }
+  function handleEditColor(updatedColor){
+    setColors((colors)=>
+    colors.map((color)=> color.id === updatedColor.id ? updatedColor : color));
+  }
 
   return (
     <>
@@ -36,6 +39,7 @@ function App() {
               key={color.id}
               color={color}
               onDeleteColor={handelDeleteColor}
+              onEditColor={handleEditColor}
             />
           ))}
         </div>

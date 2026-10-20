@@ -4,17 +4,22 @@ import "./ColorForm.css";
 export default function ColorForm({
   onSubmitColor,
   initialData = { role: "some color", hex: "#123456", contrastText: "#ffffff" },
+  buttonText = " ADD COLOR",
+  onCancel,
 }) {
-  function handleSubmit(event) {
+  function handleUpdate(event) {
+    console.log( onSubmitColor);
+    console.log("initialData:", initialData);
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
+      console.log("Submitted data:", data);
     onSubmitColor(data);
     event.currentTarget.reset();
   }
 
   return (
-    <form className="color-form" onSubmit={handleSubmit}>
+    <form className="color-form" onSubmit={handleUpdate}>
       <label htmlFor="role">
         Role
         <br />
@@ -38,7 +43,12 @@ export default function ColorForm({
         <ColorInput id="contrastText" defaultValue={initialData.contrastText} />
       </label>
       <br />
-      <button>ADD COLOR</button>
+      <button type="submit">{buttonText}</button>
+      {onCancel && (
+        <button type="button" onClick={ onCancel}>
+          Cancel
+        </button>
+      )}
     </form>
   );
 }

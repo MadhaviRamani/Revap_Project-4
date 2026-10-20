@@ -11,8 +11,8 @@ export default function ColorInput({ id, defaultValue }) {
     <>
       <input
         type="text"
-        id={id}
         name={id}
+        id={id}
         value={inputValue}
         onChange={handleInputValue}
       />
