@@ -7,14 +7,26 @@ export default function ColorForm({
   buttonText = " ADD COLOR",
   onCancel,
 }) {
-  function handleUpdate(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
+  
+function handleUpdate(event) {
+  event.preventDefault();
 
-    onSubmitColor({newColor: data});
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+
+  if (initialData.id) {
+    onSubmitColor({
+      ...data,
+      id: initialData.id,
+    });
+  } else {
+    onSubmitColor({ newColor: data });
+  }
+
+  if (!initialData.id) {
     event.currentTarget.reset();
   }
+}
 
   return (
     <form className="color-form" onSubmit={handleUpdate}>

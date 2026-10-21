@@ -28,7 +28,7 @@ export default function Color({ color, onDeleteColor, onEditColor }) {
         <ColorForm
           initialData={color}
           onSubmitColor={handleUpdate}
-          buttonText="SAVE CHANGES"
+          buttonText="UPDATE CHANGES"
           onCancel={() => setIsEditing(false)}
         />
       </div>
