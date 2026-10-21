@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ColorForm from "../ColorForm/colorForm";
+import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
 import "./Color.css";
 
 export default function Color({ color, onDeleteColor, onEditColor }) {
@@ -9,7 +10,7 @@ export default function Color({ color, onDeleteColor, onEditColor }) {
   function handleConfirmDelete() {
     onDeleteColor(color.id);
   }
-   function handleUpdate(updatedColor) {
+  function handleUpdate(updatedColor) {
     onEditColor({
       ...color,
       ...updatedColor,
@@ -19,14 +20,16 @@ export default function Color({ color, onDeleteColor, onEditColor }) {
 
   if (isEditing) {
     return (
-      <div className="color-card"
-       style={{ backgroundColor: color.hex, color: color.contrastText }}>
-      <ColorForm
-        initialData={color}
-        onSubmitColor={handleUpdate}
-        buttonText="SAVE CHANGES"
-        onCancel={() => setIsEditing(false)}
-      />
+      <div
+        className="color-card"
+        style={{ backgroundColor: color.hex, color: color.contrastText }}
+      >
+        <ColorForm
+          initialData={color}
+          onSubmitColor={handleUpdate}
+          buttonText="SAVE CHANGES"
+          onCancel={() => setIsEditing(false)}
+        />
       </div>
     );
   }
@@ -36,9 +39,11 @@ export default function Color({ color, onDeleteColor, onEditColor }) {
       className="color-card"
       style={{ backgroundColor: color.hex, color: color.contrastText }}
     >
-       <p>{color.role}</p>
-      <p>{color.hex}</p>
-     
+      <p>{color.role}</p>
+      <p htmlFor="hex-color">
+        {color.hex} <CopyToClipboard text={color.hex}/>
+      </p>
+
       <p>{color.contrastText}</p>
       {showConfirmation ? (
         <div>
