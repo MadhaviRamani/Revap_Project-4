@@ -12,7 +12,7 @@ export default function ColorForm({
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
 
-    onSubmitColor(data);
+    onSubmitColor({newColor: data});
     event.currentTarget.reset();
   }
 

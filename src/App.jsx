@@ -17,12 +17,12 @@ function App() {
 
     setColors((currentColors) => [colorWithId, ...currentColors]);
   }
-  function handelDeleteColor({toDelete}) {
+  function handelDeleteColor(toDelete) {
     setColors((currentColors) =>
       currentColors.filter((color) => color.id !== toDelete),
     );
   }
-  function handleEditColor({updatedColor}) {
+  function handleEditColor(updatedColor) {
     setColors((colors) =>
       colors.map((color) =>
         color.id === updatedColor.id ? updatedColor : color,

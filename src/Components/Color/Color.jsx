@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ColorForm from "../ColorForm/colorForm";
 import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
+import ContrastChecker from "../ContrastChecker/ContrastChecker";
 import "./Color.css";
 
 export default function Color({ color, onDeleteColor, onEditColor }) {
@@ -41,10 +42,11 @@ export default function Color({ color, onDeleteColor, onEditColor }) {
     >
       <p>{color.role}</p>
       <p htmlFor="hex-color">
-        {color.hex} <CopyToClipboard text={color.hex}/>
+        {color.hex} <CopyToClipboard text={color.hex} />
       </p>
 
       <p>{color.contrastText}</p>
+      <ContrastChecker hex={color.hex} contrastText={color.contrastText} />
       {showConfirmation ? (
         <div>
           <p className="color-card-hightlight">
