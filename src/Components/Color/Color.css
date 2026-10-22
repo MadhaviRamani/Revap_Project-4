@@ -1,32 +1,94 @@
 
 .color-card {
-  padding: 24px;
-  border-radius: 12px;
-  min-height: 140px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  min-width: 0;
+  padding: 20px;
+  overflow-wrap: anywhere;
+  border: 1px solid rgba(20, 30, 45, 0.08);
+  border-radius: 13px;
+  box-shadow: 0 5px 18px rgba(31, 48, 75, 0.08);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.color-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(31, 48, 75, 0.13);
 }
 
 .color-card p {
-  margin: 0;
-  font-weight: 600;
+  margin: 0 0 10px;
+  line-height: 1.5;
 }
 
-.color-card-headline {
-  display: inline;
-  padding: 2px 6px;
-  background: black;
-  color: white;
+.color-card p:first-child {
+  display: table;
+  max-width: 100%;
+  padding: 4px 8px;
+  margin-bottom: 14px;
+  color: #fff;
+  background: rgba(17, 24, 39, 0.9);
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 }
-.delete-button{
-  width: 10%;
-  border-radius: 5px;
-  border: 0;
+
+.color-card p:nth-child(2) {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
-/* .delete-button:hover{
-  width: 15%;
-  height: 30px;
-} */
+
+.color-card p:nth-child(3) {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.color-card > div > p {
+  font-size: 12px;
+}
+
+.color-card .delete-button,
+.color-card .confirm-button {
+  min-height: 36px;
+  margin: 8px 8px 0 0;
+  padding: 8px 14px;
+  border: 1px solid rgba(20, 30, 45, 0.18);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.color-card .delete-button:hover,
+.color-card .confirm-button:hover {
+  filter: brightness(0.94);
+  transform: translateY(-1px);
+}
+
+.color-card .color-card-hightlight {
+  margin-top: 12px;
+  color: #202938;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.color-card .color-form label {
+  color: #344054;
+}
+
+.color-card .color-form p {
+  color: #202938;
+}
+
+@media (max-width: 480px) {
+  .color-card {
+    padding: 16px;
+  }
+
+  .color-card p:nth-child(2) {
+    font-size: 19px;
+  }
+}

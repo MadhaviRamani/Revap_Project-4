@@ -1,0 +1,37 @@
+
+.color-form .color-input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.color-form .color-input-group input[type="text"] {
+  flex: 1;
+  width: 100%;
+}
+
+.color-form .color-input-group input[type="color"] {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 42px;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid #d5deeb;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.color-form .color-input-group input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-form .color-input-group input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 5px;
+}
+
+.color-form .color-input-group input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 5px;
+}

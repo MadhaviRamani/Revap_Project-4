@@ -1,0 +1,30 @@
+
+.contrast-checker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+  font-size: 12px;
+}
+
+.contrast-checker p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contrast-checker .contrast-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  color: #166534;
+  background: #dcfce7;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.contrast-checker .contrast-status.fail {
+  color: #991b1b;
+  background: #fee2e2;
+}
