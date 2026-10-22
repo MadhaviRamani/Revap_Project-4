@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import "./ContrastChecker.css"
 const fetcher = (url) =>
   fetch(url).then((res) => {
     if (!res.ok) {
